@@ -600,13 +600,13 @@ function init() {
   var slide = new Slide(width, height, 'out');
 	var l1 = new THREE.ImageLoader();
 	l1.setCrossOrigin('Anonymous');
-  slide.setImage(l1.load('/assets/img/mc-affe.jpg'));
+  slide.setImage(l1.load("https://i.ibb.co/r46ZL8j/norton.jpg"));
   root.scene.add(slide);
 
   var slide2 = new Slide(width, height, 'in');
   var l2 = new THREE.ImageLoader();
 	l2.setCrossOrigin('Anonymous');
-	slide2.setImage(l2.load('/assets/img/norton.jpg'));
+	slide2.setImage(l2.load("https://i.ibb.co/Bss5fLX/mc-affe.jpg"));
   root.scene.add(slide2);
 
   var tl = new TimelineMax({repeat:-1, repeatDelay:1.0, yoyo: true});
