@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Introducción a la Ciber Seguridad</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- VENDOR CSS -->
+	<link rel="stylesheet" href="assetsBoard/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assetsBoard/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assetsBoard/vendor/linearicons/style.css">
+	<link rel="stylesheet" href="assetsBoard/vendor/chartist/css/chartist-custom.css">
+	<!-- MAIN CSS -->
+	<link rel="stylesheet" href="assetsBoard/css/main.css">
+	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+	<link rel="stylesheet" href="assetsBoard/css/demo.css">
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<!-- ICONS -->
+	<link rel="apple-touch-icon" sizes="76x76" href="img/logo.ico">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/logo.ico">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.0/dist/chart.min.js"></script>
+	<style>
+		.texto-1{font-size: 20px;}
+        .image-wrapper {
+	 width: 600px;
+	 height: 400px;
+	 position: relative;
+	 margin: 5vh auto;
+}
+ .image-wrapper img {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 transform-origin: left;
+}
+ .image-1 {
+	 clip-path: polygon(0 0, 0 32%, 28% 0);
+	 transform: translate(-10px, -10px);
+	 transition: transform 300ms ease;
+	 transform-origin: top;
+}
+ .image-wrapper:hover .image-1 {
+	 transform: translate(0, 0);
+}
+ .image-2 {
+	 clip-path: polygon(28% 0, 0 32%, 0 100%, 17% 100%, 90% 0);
+	 transform: translate(-30px, 5px);
+	 transition: transform 300ms ease;
+}
+ .image-wrapper:hover .image-2 {
+	 transform: translate(0, 0);
+}
+ .image-3 {
+	 clip-path: polygon(100% 0, 100% 65%, 74% 100%, 17% 100%, 90% 0);
+	 transform: translate(-15px, -10px);
+	 transition: transform 300ms ease;
+}
+ .image-wrapper:hover .image-3 {
+	 transform: translate(0, 0);
+}
+ .image-4 {
+	 clip-path: polygon(100% 65%, 74% 100%, 100% 100%);
+	 transform: translate(-32px, 5px);
+	 transition: transform 300ms ease;
+	 transform-origin: top;
+}
+ .image-wrapper:hover .image-4 {
+	 transform: translate(0, 0);
+}
+ 
+
+	</style>
+    <style>
+        * {
+	 box-sizing: border-box;
+}
+
+ #lineCont {
+	 width: 100%;
+	 height: 2%;
+}
+ #line {
+	 height: 6px;
+	 width: 70%;
+	 background:  rgb(100 161 157);
+	 border-radius: 5px;
+	 margin: auto;
+	 top: 50%;
+	 transform: translateY(-50%);
+	 position: relative;
+}
+ #span {
+	 display: none;
+	 width: 70%;
+	 margin: auto;
+	 margin-top: 5%;
+	 text-align: center;
+	 color: rgb(0, 132, 255);
+}
+ .circle {
+	width: 50px;
+    height: 50px;
+    background: #cefff6f7;
+    border-radius: 50px;
+    position: absolute;
+    top: -20px;
+    border: 3px solid  rgb(100, 161, 157);
+    cursor: pointer;
+}
+ .circle:before {
+	content: '';
+    width: 44px;
+    height: 44px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    border-radius: 100%;
+    top: 0px;
+    left: 0px;
+	 display: none;
+}
+ .circle .popupSpan {
+	 width: auto;
+	 height: auto;
+	 padding: 10px;
+	 white-space: nowrap;
+	 display: inline-block;
+	 color: rgb(0, 0, 0);
+	 position: absolute;
+	 top: 20px;
+	 left: -75px;
+	 display: none;
+	 transition: all 0.1s ease-out;
+}
+ .circle.hover:before, .circle.active:before {
+	 display: block;
+}
+ .circle.hover .popupSpan, .circle.active .popupSpan {
+	 display: block;
+}
+ .circle.active .popupSpan {
+	 top: -40px;
+}
+ #mainCont {
+	 height: 80%;
+	 width: 100%;
+	 position: relative;
+	 color: rgb(0, 0, 0);
+	 font-size: 62px;
+	 text-align: center;
+	 transition: all 0.2s ease-out;
+}
+ #mainCont span {
+	 display: inline-block;
+	 width: 100%;
+	 height: 100%;
+	 position: absolute;
+	 top: 30%;
+	 transition: all 0.2s ease-out;
+}
+ #mainCont span.right {
+	 left: 200%;
+}
+ #mainCont span.center {
+	 left: 0% !important;
+}
+ #mainCont span.left {
+	 left: -100%;
+}
+pre {
+    background-color: #1C1D21;
+    color: #c0c5ce;
+    font-size: 2rem;
+}
+    </style>
+</head>
+
+<body>
+		<!-- WRAPPER -->
+		<div id="wrapper">
+			<!-- NAVBAR -->
+			<nav class="navbar navbar-default navbar-fixed-top">
+				
+				<div class="container-fluid">
+					<div class="navbar-btn">
+						<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+					</div>
+					<div class="navbar-form navbar-left">
+						<div class="input-group">
+							<samp><label for="">Team 404NotFound</label></samp>
+						</div>
+					</div>	
+					
+					<div id="navbar-menu">
+						<ul class="nav navbar-nav navbar-right">
+							
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Ayuda</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+								<ul class="dropdown-menu">
+									<li data-toggle="modal" data-target="#exampleModal" ><a href="#">Uso Basico</a></li>
+									
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assetsBoard/img/user.png" class="img-circle" alt="Avatar"> <span>usuario</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+								<ul class="dropdown-menu">
+									<li><a href="#"><i class="lnr lnr-user"></i> <span>Perfil(Proximamente)</span></a></li>
+									<li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout(Proximamente)</span></a></li>
+								</ul>
+							</li>
+							<!-- <li>
+								<a class="update-pro" href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- END NAVBAR -->
+			<!-- LEFT SIDEBAR -->
+			<div id="sidebar-nav" class="sidebar">
+				<div class="sidebar-scroll">
+					<nav>
+						<ul class="nav">
+							<li>
+								<a href="#subPages" data-toggle="collapse" class="collapsed active"><i class="lnr lnr-home"></i> <span>Introducción</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+								<div id="subPages" class="collapse ">
+									<ul class="nav">
+										<li><a href="introduccion.html#inicio" class="">Inicio</a></li>
+										<li><a href="introduccion.html#tem1" class="">¿Qué es la información? </a></li>
+										<li><a href="introduccion.html#tem2" class="">¿Qué es la seguridad informática?</a></li>
+										<li><a href="introduccion.html#tem3" class="">Amenazas</a></li>
+										<li><a href="introduccion.html#tem4" class="">Tipos de ataques</a></li>
+										<li><a href="introduccion.html#tem5" class="">Vulnerabilidades</a></li>
+										<li><a href="introduccion.html#tem6" class="">Dimensiones de la seguridad informática</a></li>
+										
+									
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-laptop"></i> <span>Laboratorio</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+								<div id="subPages2" class="collapse ">
+									<ul class="nav">
+										<li><a href="laboratorio.html#inicio" class="">Inicio</a></li>
+										<li><a href="laboratorio.html#tem1" class="">Kali Linux </a></li>
+										<li><a href="laboratorio.html#tem2" class="">Instalación de Kali Linux en VMware</a></li>
+										<li><a href="laboratorio.html#tem3" class="">Comandos básicos</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="#subPages3" data-toggle="collapse" class="collapsed"><i class="lnr lnr lnr-keyboard"></i> <span>Casos prácticos</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+								<div id="subPages3" class="collapse ">
+									<ul class="nav">
+										<li><a href="casosPracticos.html#inicio" class="">Inicio</a></li>
+										<li><a href="casosPracticos.html#tem2" class="">Eye</a></li>
+										<li><a href="casosPracticos.html#tem3" class="">Ngrook</a></li>
+										<li><a href="casosPracticos.html#tem1" class="">NMAP</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="lnr lnr-heart-pulse"></i> <span>Complementos </span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+								<div id="subPages4" class="collapse ">
+									<ul class="nav">
+										<li><a href="complementos.html#inicio" class="">Inicio</a></li>
+										<li><a href="complementos.html#tem1" class="">Antivirus y buenas Prácticas</a></li>
+										<li><a href="complementos.html#tem2" class="">¿Es necesario saber programar en seguridad informática?</a></li>
+									
+									</ul>
+								</div>
+							</li>
+							
+							</ul>
+					</nav>
+				</div>
+			</div>
+			<!-- END LEFT SIDEBAR -->
+		<!-- MAIN -->
+		<div class="main">
+			<!-- MAIN CONTENT -->
+			<div class="main-content">
+				<div class="container-fluid">
+					
+					<!-- OVERVIEW -->
+					<div id="tem1" class="panel panel-headline">
+						<div class="panel-heading">
+							<h6 class="panel-title text-primary" style="font-size: 24px; color:  #64a19d"><strong>Kali Linux</strong></h6>
+							<p class="panel-subtitle">Actualizado: Abril 14, 2020</p>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12">
+                                    <h3><strong>¿Qué es Kali Linux?</strong></h3>
+									<p class="texto-1">
+                                        <p>Su principal objetivo es poner a disposición del usuario, las mejores herramientas para trabajar la auditoría en internet y contar con un potente <strong>sistema de seguridad</strong> <strong>informática</strong> ante los peligros que puedan existir.</p>
+                                        <br>
+                                        <p>Kali Linux es la versión mejorada y renovada de la <strong>distro BackTrack</strong>, creada por Offensive Segurity. La distro se basa en Debian, mientras que Backtrack se fijó en Ubuntu para la creación de su programación.</p>
+                                    </p>
+									<br>
+                                    </div>
+								
+								<div class="col-md-12 text-center">
+									<div class="col-md-2"></div>
+									<div class="col-md-8">
+										<div class="image-wrapper">
+                                            <img  style="width: 100%;" class="image-1" src="assets/img/kali-desktop.jpg" />
+                                            <img  style="width: 100%;" class="image-2" src="assets/img/kali-desktop.jpg" />
+                                            <img  style="width: 100%;" class="image-3" src="assets/img/kali-desktop.jpg" />
+                                            <img  style="width: 100%;" class="image-4" src="assets/img/kali-desktop.jpg" />
+                                        </div>
+									</div>
+									<div class="col-md-2"></div>
+								</div>
+								<div class="col-md-12">
+									<h3><strong>¿Por qué Kali Linux?</strong></h3>
+                                    <p>Muchos hackers encuentran en este distro, el mecanismo perfecto porque a través de las auditorias realizadas en internet encuentran cuales son los puntos débiles de la red. A raíz de esos conocimientos, obtienen el camino para dar comienzo a su ataque a otros sistemas informáticos y redes que se conectan a internet.</p>
+                                    <br>
+                                    <p>Aunque, en contrapartida también es utilizado por los <strong>hackers éticos</strong>, que se dedican a auditar sistemas informativos para combatir las actividades ilegales de hackeos, así como realizar análisis forenses después de un ataque. El procedimiento es sencillo, analizan las carencias del sistema y estudian el origen del mismo, hasta llegar a la solución que consiga <strong>erradicar las posibles vulnerabilidades</strong> utilizadas por los ciberdelincuentes para atacar nuestros sistemas.</p>
+								
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END OVERVIEW -->
+					
+					<!-- OVERVIEW -->
+					<div   id="tem2" class="panel panel-headline" style="">
+						<div class="panel-heading">
+							<h6 class="panel-title text-primary" style="font-size: 24px; color:  #64a19d">Instalación de Kali Linux en VMware </h6>
+							<p class="panel-subtitle">Actualizado: Abril 14, 2020</p>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="col-md-6">
+										<p class="texto-1">
+											
+											<h3><strong>¿Qué es y para qué sirve el VMware?</strong></h3>
+
+											VMware es una aplicación que sirve para hacer máquinas virtuales con instalaciones de sistemas operativos. Esto quiere decir que si tienes un ordenador con Windows, GNU/Linux o incluso macOS, puedes crear una máquina virtual con cualquier otro sistema operativo para utilizarlo dentro del que estés usando.
+											<br> <br>
+											<p>Finalmente vamos a ver qué requisitos necesita Kali Linux para su instalación, algo que tendremos que tener presente a la hora de configurar nuestra máquina virtual:</p>
+											<ul>
+												<li><strong>CPU</strong>: procesador ARM, i386 o x64</li>
+												<li><strong>Espacio de almacenamiento</strong>: 15 GB o más</li>
+												<li><strong>Memoria RAM</strong>: 1 GB como mínimo para versión de escritorio y 2 GB recomendado</li>
+												<li><strong>Tarjeta de red</strong> cableada o Wi-Fi para las pruebas</li>
+												</ul>
+										</p>
+									</div>
+									
+									<div class="col-md-6">
+										<iframe width="100%" height="315" src="https://www.youtube.com/embed/7iDW5WGTfwM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>								</div>
+
+													
+
+							</div>
+						</div>
+					</div>
+					<!-- END OVERVIEW -->
+
+                    <!-- OVERVIEW -->
+					<div  id="tem3" class="panel panel-headline" style="">
+						<div class="panel-heading">
+							<h6 class="panel-title text-primary" style="font-size: 24px; color:  #64a19d">Comandos básicos </h6>
+							<p class="panel-subtitle">Actualizado: Abril 14, 2020</p>
+						</div>
+						<div class="panel-body" style="height: 1500px;">
+							<div class="row">
+								<div class="col-md-12">
+									
+									<div id="lineCont" style="padding-bottom : 30px; padding-top: 10%;"> 
+										<div id="line"></div>
+											<div id="span">Date Placeholder</div>
+									</div>
+										<div id="mainCont">
+										</div>
+								
+									
+									
+
+
+
+								</div>
+													
+
+							</div>
+						</div>
+					</div>
+					<!-- END OVERVIEW -->
+					
+				</div>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+		<!-- END MAIN -->
+		<div class="clearfix"></div>
+		<footer>
+			<div class="container-fluid" >
+				<p class="copyright">&copy; 2017 <a href="https://www.themeineed.com" target="_blank">Theme I Need</a>. All Rights Reserved.</p>
+			</div>
+		</footer>
+	</div>
+	<!-- END WRAPPER -->
+		<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Ayuda</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			La guía esta hecha con el fin de introducir a una persona al mundo de la ciberseguridad. <br>
+			Para navegar entre los temas toque cualquier sección, se desplegaran los subtemas, cada uno enfocado a un tema en específico. Estos temas son seleccionados cuidadosamente para transmitir la esencia de la seguridad y motivar al aprendizaje.
+			<br><br> Cualquier duda o consulta, pude contactarse por medio del correo: <br><br>
+			<label class="text-primary" for="">team404notfound.one@gmail.com</label>
+			
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+	<!-- Javascript -->
+	<script src="assetsBoard/vendor/jquery/jquery.min.js"></script>
+	<script src="assetsBoard/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assetsBoard/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assetsBoard/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+	<script src="assetsBoard/vendor/chartist/js/chartist.min.js"></script>
+	<script src="assetsBoard/scripts/klorofil-common.js"></script>
+	<script>
+//Sample dates
+var dates = ["Comando ls", "Comando cd", "Comando cp", "Comando rm", "Comando mkdir", "Comando chmod", "Comando cat","Comando vi/nano","Comando sudo","Comando clear"];
+//For the purpose of stringifying MM/DD/YYYY date format
+var monthSpan = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var pasos=[];
+
+pasos.push(`<div class="comando">
+										<div class="col-md-12 text-center" style="font-size: 30px;">
+											<h1><strong> Comando ls </strong></h1>
+											<p>
+												Lista los archivos y carpetas del directorio actual.
+												Parámetros <br>
+												<strong>–l</strong> <br>
+												Para listar el contenido como una lista detallada. <br>
+												<strong>-a</strong> <br>
+												Mostrar los archivos (ocultos + no-ocultos).
+											</p>
+										</div>
+										<div class="row">
+										<div class="col-md-2"></div>
+										<div class="col-md-8">
+											<img src="assetsBoard/img/ls-la.png" style="width: 100%;" alt="">
+										</div>
+										<div class="col-md-2"></div>
+
+											
+										</div>
+									</div>`);
+pasos.push(`<div class="comando">
+	<div class="col-md-12 text-center" style="font-size: 30px;">
+		<h1><strong> Comando cd</strong></h1>
+		<p>
+			Cambia el directorio del directorio actual a otro.
+		</p>
+	</div>
+	<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<img src="assetsBoard/img/cd.png" style="width: 100%;" alt="">
+	</div>
+	<div class="col-md-2"></div>
+
+		
+	</div>
+</div>`);	
+pasos.push(`<div class="comando">
+	<div class="col-md-12 text-center" style="font-size: 30px;">
+		<h1><strong>Comando cp</strong></h1>
+		<p>
+			Copia la fuente al objetivo. <br>
+
+			Parámetros<br>
+
+			<strong>-I</strong>  <br>
+
+			Modo interactivo indica que espera por la confirmación si hay archivos en el destino que puedan ser sobrescritos.<br>
+
+			<strong>-r</strong>  <br>
+
+			Copia recursiva significa que incluye los subdirectorios si estos existen.<br>
+
+			Ejemplo:
+		</p>
+	</div>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<img src="assetsBoard/img/cp.png" style="width: 100%;" alt="">
+		</div>
+		<div class="col-md-2"></div>
+		
+	</div>
+</div>`);
+pasos.push(`<div class="comando">
+	<div class="col-md-12 text-center" style="font-size: 30px;">
+		<h1><strong>Comando rm</strong></h1>
+		<p>
+			Elimina un archivo o directorio y debes utilizar – r en caso de que quieras eliminar un directorio.
+			Parámetros  <br>
+			<strong>-r</strong>  <br>
+			Una eliminación recursiva significa que todos los subdirectorios si existen.  <br>
+			<strong>-r</strong>-I<br>
+			Interactivo significa que debes esperar hasta la confirmación  <br>
+		</p>
+	</div>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<img src="assetsBoard/img/rm.png" style="width: 100%;" alt="">
+		</div>
+		<div class="col-md-2"></div>
+		
+	</div>
+</div>`);
+pasos.push(`<div class="comando">
+	<div class="col-md-12 text-center" style="font-size: 30px;">
+		<h1><strong>Comando mkdir</strong></h1>
+		<p>
+			
+Crea un nuevo directorio.
+		</p>
+	</div>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<img src="assetsBoard/img/mkdir.png" style="width: 100%;" alt="">
+		</div>
+		<div class="col-md-2"></div>
+		
+	</div>
+</div>`);		
+pasos.push(`<div class="comando">
+	<div class="col-md-12 text-center" style="font-size: 30px;">
+		<h1><strong>Comando chmod</strong></h1>
+		<p>
+			
+			Cambia los permisos de un archivo o directorio. <br>
+
+			Parámetros <br>
+
+			El modo consiste en 3 partes. dueño, grupos, y otros esto hace referencia a los permisos para estos modos y debes especificarlos. <br>
+
+			Los permisos son los siguientes:<br>
+
+			<strong>Read (Lee) =4</strong><br>
+			<strong>Write (Escribir) = 2</strong><br>
+			<strong>Execute (Ejecutar) =1</strong><br>
+
+			Cada permiso es representado por un número como se muestras y puedes además combinar permisos.<br>
+
+			Ejemplo
+		</p>
+		<pre class="lang:sh decode:true">chmod 755 myfile</pre>
+	</div>
+	<div class="col-md-12 text-center" style="font-size: 30px;"> 
+		Esto significa establecer permisos para el archivo llamado myfile: <br>
+		owner: establecer a 7 lo cual significa 4+2+1 y esto es read+write+execute.<br>
+		group: establecer 5 esto significa 4+1 y esto es read+execute. <br>
+		other: Establecer 5 lo cual significa 4+1 y esto es read+execute. <br>
+		Nota: Ejecutar para para un permiso de usuario significa abrirlo. <br> <br>
+	</div>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<img src="assetsBoard/img/chmod.png" style="width: 100%;" alt="">
+		</div>
+		<div class="col-md-2"></div>
+		
+	</div>
+</div>`);								
+pasos.push(`<div class="comando">
+	<div class="col-md-12 text-center" style="font-size: 30px;">
+		<h1><strong>Comando cat</strong></h1>
+		<p>
+			Muestra el contenido de un archivo en la pantalla sin limites. <br>
+
+			Ejemplo
+		</p>
+	</div>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<img src="assetsBoard/img/cat.png" style="width: 100%;" alt="">
+		</div>
+		<div class="col-md-2"></div>
+		
+	</div>
+</div>`);
+pasos.push(`<div class="comando">
+	<div class="col-md-12 text-center" style="font-size: 30px;">
+		<h1><strong>Editar un Archivo: vi / nano</strong></h1>
+		<p>
+			
+			Vim y nano son dos editores de texto. <br>
+
+			Vim suele venir por defecto en todos los sistemas, aunque nano posiblemente tengamos que instalarlo. esto varía de unas distribuciones a otras,
+			aunque en Kali podemos hacerlo con:
+		</p>
+	</div>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<img src="assetsBoard/img/nano.png" style="width: 100%;" alt="">
+		</div>
+		<div class="col-md-2"></div>
+		
+	</div>
+</div>`);
+pasos.push(`<div class="comando">
+	<div class="col-md-12 text-center" style="font-size: 30px;">
+		<h1><strong>Ejecutar en Modo Superusuario: sudo</strong></h1>
+		<p>
+			
+			Sirve para ejecutar alguna orden en modo superusuario, también pide la contraseña antes de hacer nada. <br>
+
+			Si quieres disparar una orden con privilegios de administrador debes teclear este comando
+		</p>
+	</div>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<img src="assetsBoard/img/sudo.png" style="width: 100%;" alt="">
+		</div>
+		<div class="col-md-2"></div>
+		
+	</div>
+</div>`);
+pasos.push(`<div class="comando">
+	<div class="col-md-12 text-center" style="font-size: 30px;">
+		<h1><strong>Limpiar la Terminal: clear</strong></h1>
+		<p>
+			Limpia el texto de la terminal. Siempre está bien poder ver lo que estamos haciendo  :)
+		</p>
+	</div>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<img src="assetsBoard/img/clear.png" style="width: 100%;" alt="">
+		</div>
+		<div class="col-md-2"></div>
+		
+	</div>
+</div>`);
+									//Main function. Draw your circles.
+function makeCircles() {
+  //Forget the timeline if there's only one date. Who needs it!?
+  if (dates.length < 2) {
+    $("#line").hide();
+    $("#span").show().text(dates[0]);
+    //This is what you really want.
+  } else if (dates.length >= 2) {
+   
+    //Integer representation of the last day. The first day is represnted as 0
+    var lastInt =10;
+
+    //Draw first date circle
+    $("#line").append('<div class="circle" id="circle0" style="left: ' + 0 + '%;"><div class="popupSpan">' + dates[0] + '</div></div>');
+    
+    //$("#mainCont").append('<span id="span0" class="center">' + dateSpan(dates[0]) + '</span>');
+    $("#mainCont").append('<span id="span0" class="center">' + pasos[0]+ '</span>');
+
+	thisInt=0;
+    //Loop through middle dates
+    for (i = 1; i < dates.length - 1; i++) {
+     
+		thisInt+=1.1;
+      //Integer relative to the first and last dates
+      var relativeInt = thisInt / lastInt;
+
+      //Draw the date circle
+      $("#line").append('<div class="circle" id="circle' + i + '" style="left: ' + relativeInt * 100 + '%;"><div class="popupSpan">' + dates[i] + '</div></div>');
+      
+    //$("#mainCont").append('<span id="span' + i + '" class="right">' + dateSpan(dates[i]) + '</span>');
+      $("#mainCont").append('<span id="span' + i + '" class="right">' + pasos[i]+ '</span>');
+    }
+
+    //Draw the last date circle
+    $("#line").append('<div class="circle" id="circle' + i + '" style="left: ' + 99 + '%;"><div class="popupSpan">' + dates[dates.length - 1] + '</div></div>'); 
+    
+    $("#mainCont").append('<span id="span' + i + '" class="right">'+ pasos[dates.length - 1]+  '</span>');
+  }
+
+  $(".circle:first").addClass("active");
+}
+
+makeCircles();
+
+$(".circle").mouseenter(function() {
+  $(this).addClass("hover");
+});
+
+$(".circle").mouseleave(function() {
+  $(this).removeClass("hover");
+});
+
+$(".circle").click(function() {
+  var spanNum = $(this).attr("id");
+  selectDate(spanNum);
+});
+
+function selectDate(selector) {
+  $selector = "#" + selector;
+  $spanSelector = $selector.replace("circle", "span");
+  var current = $selector.replace("circle", "");
+  
+  $(".active").removeClass("active");
+  $($selector).addClass("active");
+  
+  if ($($spanSelector).hasClass("right")) {
+    $(".center").removeClass("center").addClass("left")
+    $($spanSelector).addClass("center");
+    $($spanSelector).removeClass("right")
+  } else if ($($spanSelector).hasClass("left")) {
+    $(".center").removeClass("center").addClass("right");
+    $($spanSelector).addClass("center");
+    $($spanSelector).removeClass("left");
+  }; 
+};
+
+console.log()
+		// chart colors
+var colors = ['#007bff','#28a745','#333333','#dc3545','#dc3545','#6c757d'];
+
+/* 3 donut charts */
+var donutOptions = {
+  cutoutPercentage: 85, 
+  legend: {position:'bottom', padding:5, labels: {pointStyle:'circle', usePointStyle:true}}
+};
+
+// donut 1
+var chDonutData1 = {
+    labels: ['Confidencialidad', 'Integridad', 'Disponibilidad','Autenticación'],
+    datasets: [
+      {
+        backgroundColor: colors.slice(0,4),
+        borderWidth: 0,
+        data: [25, 25, 25,25]
+      }
+    ]
+};
+var chDonut1 = document.getElementById("chDonut1");
+if (chDonut1) {
+  new Chart(chDonut1, {
+      type: 'pie',
+      data: chDonutData1,
+      options: donutOptions
+  });
+}
+
+	$(function() {
+		var data, options;
+
+		// headline charts
+		data = {
+			labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+			series: [
+				[23, 29, 24, 40, 25, 24, 35],
+				[14, 25, 18, 34, 29, 38, 44],
+			]
+		};
+
+		options = {
+			height: 300,
+			showArea: true,
+			showLine: false,
+			showPoint: false,
+			fullWidth: true,
+			axisX: {
+				showGrid: false
+			},
+			lineSmooth: false,
+		};
+
+		new Chartist.Line('#headline-chart', data, options);
+
+
+		// visits trend charts
+		data = {
+			labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+			series: [{
+				name: 'series-real',
+				data: [200, 380, 350, 320, 410, 450, 570, 400, 555, 620, 750, 900],
+			}, {
+				name: 'series-projection',
+				data: [240, 350, 360, 380, 400, 450, 480, 523, 555, 600, 700, 800],
+			}]
+		};
+
+		options = {
+			fullWidth: true,
+			lineSmooth: false,
+			height: "270px",
+			low: 0,
+			high: 'auto',
+			series: {
+				'series-projection': {
+					showArea: true,
+					showPoint: false,
+					showLine: false
+				},
+			},
+			axisX: {
+				showGrid: false,
+
+			},
+			axisY: {
+				showGrid: false,
+				onlyInteger: true,
+				offset: 0,
+			},
+			chartPadding: {
+				left: 20,
+				right: 20
+			}
+		};
+
+		new Chartist.Line('#visits-trends-chart', data, options);
+
+
+		// visits chart
+		data = {
+			labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+			series: [
+				[6384, 6342, 5437, 2764, 3958, 5068, 7654]
+			]
+		};
+
+		options = {
+			height: 300,
+			axisX: {
+				showGrid: false
+			},
+		};
+
+		new Chartist.Bar('#visits-chart', data, options);
+
+
+		// real-time pie chart
+		var sysLoad = $('#system-load').easyPieChart({
+			size: 130,
+			barColor: function(percent) {
+				return "rgb(" + Math.round(200 * percent / 100) + ", " + Math.round(200 * (1.1 - percent / 100)) + ", 0)";
+			},
+			trackColor: 'rgba(245, 245, 245, 0.8)',
+			scaleColor: false,
+			lineWidth: 5,
+			lineCap: "square",
+			animate: 800
+		});
+
+		var updateInterval = 3000; // in milliseconds
+
+		setInterval(function() {
+			var randomVal;
+			randomVal = getRandomInt(0, 100);
+
+			sysLoad.data('easyPieChart').update(randomVal);
+			sysLoad.find('.percent').text(randomVal);
+		}, updateInterval);
+
+		function getRandomInt(min, max) {
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+	});
+	</script>
+</body>
+
+</html>

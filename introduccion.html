@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Introducción a la Ciber Seguridad</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- VENDOR CSS -->
+	<link rel="stylesheet" href="assetsBoard/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assetsBoard/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assetsBoard/vendor/linearicons/style.css">
+	<link rel="stylesheet" href="assetsBoard/vendor/chartist/css/chartist-custom.css">
+	<!-- MAIN CSS -->
+	<link rel="stylesheet" href="assetsBoard/css/main.css">
+	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+	<link rel="stylesheet" href="assetsBoard/css/demo.css">
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<!-- ICONS -->
+	<link rel="apple-touch-icon" sizes="76x76" href="img/logo.ico">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/logo.ico">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.0/dist/chart.min.js"></script>
+	<style>
+		.texto-1{font-size: 20px;}
+	</style>
+</head>
+
+<body>
+	<!-- WRAPPER -->
+	<div id="wrapper">
+		<!-- NAVBAR -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			
+			<div class="container-fluid">
+				<div class="navbar-btn">
+					<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+				</div>
+				<div class="navbar-form navbar-left">
+					<div class="input-group">
+						<samp><label for="">Team 404NotFound</label></samp>
+					</div>
+				</div>	
+				
+				<div id="navbar-menu">
+					<ul class="nav navbar-nav navbar-right">
+						
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Ayuda</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<ul class="dropdown-menu">
+								<li data-toggle="modal" data-target="#exampleModal" ><a href="#">Uso Basico</a></li>
+								
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assetsBoard/img/user.png" class="img-circle" alt="Avatar"> <span>usuario</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<ul class="dropdown-menu">
+								<li><a href="#"><i class="lnr lnr-user"></i> <span>Perfil(Proximamente)</span></a></li>
+								<li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout(Proximamente)</span></a></li>
+							</ul>
+						</li>
+						<!-- <li>
+							<a class="update-pro" href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- END NAVBAR -->
+		<!-- LEFT SIDEBAR -->
+		<div id="sidebar-nav" class="sidebar">
+			<div class="sidebar-scroll">
+				<nav>
+					<ul class="nav">
+						<li>
+							<a href="#subPages" data-toggle="collapse" class="collapsed active"><i class="lnr lnr-home"></i> <span>Introducción</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages" class="collapse ">
+								<ul class="nav">
+									<li><a href="introduccion.html#inicio" class="">Inicio</a></li>
+									<li><a href="introduccion.html#tem1" class="">¿Qué es la información? </a></li>
+									<li><a href="introduccion.html#tem2" class="">¿Qué es la seguridad informática?</a></li>
+									<li><a href="introduccion.html#tem3" class="">Amenazas</a></li>
+									<li><a href="introduccion.html#tem4" class="">Tipos de ataques</a></li>
+									<li><a href="introduccion.html#tem5" class="">Vulnerabilidades</a></li>
+									<li><a href="introduccion.html#tem6" class="">Dimensiones de la seguridad informática</a></li>
+									
+								
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-laptop"></i> <span>Laboratorio</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages2" class="collapse ">
+								<ul class="nav">
+									<li><a href="laboratorio.html#inicio" class="">Inicio</a></li>
+									<li><a href="laboratorio.html#tem1" class="">Kali Linux </a></li>
+									<li><a href="laboratorio.html#tem2" class="">Instalación de Kali Linux en VMware</a></li>
+									<li><a href="laboratorio.html#tem3" class="">Comandos básicos</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#subPages3" data-toggle="collapse" class="collapsed"><i class="lnr lnr lnr-keyboard"></i> <span>Casos prácticos</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages3" class="collapse ">
+								<ul class="nav">
+									<li><a href="casosPracticos.html#inicio" class="">Inicio</a></li>
+									<li><a href="casosPracticos.html#tem2" class="">Eye</a></li>
+									<li><a href="casosPracticos.html#tem3" class="">Ngrook</a></li>
+									<li><a href="casosPracticos.html#tem1" class="">NMAP</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="lnr lnr-heart-pulse"></i> <span>Complementos </span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages4" class="collapse ">
+								<ul class="nav">
+									<li><a href="complementos.html#inicio" class="">Inicio</a></li>
+									<li><a href="complementos.html#tem1" class="">Antivirus y buenas Prácticas</a></li>
+									<li><a href="complementos.html#tem2" class="">¿Es necesario saber programar en seguridad informática?</a></li>
+								
+								</ul>
+							</div>
+						</li>
+						
+						</ul>
+				</nav>
+			</div>
+		</div>
+		<!-- END LEFT SIDEBAR -->
+		<!-- MAIN -->
+		<div class="main">
+			<!-- MAIN CONTENT -->
+			<div  class="main-content">
+				<div class="container-fluid">
+					<!-- OVERVIEW -->
+					<div id="tem1"  class="panel panel-headline">
+						<div class="panel-heading">
+							<h6 class="panel-title text-primary" style="font-size: 24px; color:  #64a19d">
+								<div class="col-md-8">
+									¿Qué es la información? 
+								</div>
+								<div class="col-md-4">
+									<audio controls class="embed-responsive-item" style="border-radius: 50px;
+										background: #e0e0e0;
+										box-shadow:  7px 7px 14px #7d7d7d,
+										-7px -7px 14px #ffffff;">
+										<source src="assetsBoard/sound/introduccion.mp3">
+									</audio>
+								</div>
+							</h6>
+							<p class="panel-subtitle">Actualizado: Abril 14, 2020</p>
+							
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-8">
+									<p class="texto-1">
+										En informatica: La informacion se denomina el conjunto de datos organizados y procesados que funcionan como mensajes, instrucciones y operaciones o cualquier otro tipo de actividad que tenga lugar en una computadora.
+									</p>
+									<br>
+									<p class="texto-1">
+										La importancia de la información radica en que, puede contener desde un simple mensaje asta informacion muy delicada que debe ser protejida, lo que debemos saber es que siempre abra quien quiera obtener esa información.
+									</p>
+								</div>
+								<div class="col-md-4">
+									
+									<img src="assetsBoard/img/informacion.png" style="width: 100%;border-radius: 25px;
+									background: #e0e0e0;
+									box-shadow:  25px 25px 50px #8b8b8b,
+									-25px -25px 50px #ffffff;" alt="">
+								</div>
+								<br>
+								
+
+							</div>
+						</div>
+					</div>
+					<!-- END OVERVIEW -->
+					<!-- OVERVIEW -->
+					<div id="tem2" class="panel panel-headline">
+						<div class="panel-heading">
+							<h6 class="panel-title text-primary" style="font-size: 24px; color:  #64a19d">¿Qué es la seguridad informática?</h6>
+							<p class="panel-subtitle">Actualizado: Abril 14, 2020</p>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12">
+									<p class="texto-1">
+										La seguridad informática es en realidad una rama de un término más genérico que es la seguridad de la información, aunque en la práctica se suelen utilizar de forma indistinta ambos términos. La seguridad informática abarca una serie de medidas de seguridad, tales como programas de software de antivirus, firewalls, y otras medidas que dependen del usuario, tales como la activación de la desactivación de ciertas funciones de software
+									</p>
+									<br>
+									
+								</div>
+								
+								
+								<div class="col-md-12">
+									
+									<h5> <label for="">¿Por qué es tan importante la seguridad informática?</label> </h5>
+									<p class="texto-1">
+										Prevenir el robo de datos tales como números de cuentas bancarias, información de tarjetas de crédito, contraseñas, documentos relacionados con el trabajo, hojas de cálculo, etc. es algo esencial durante las comunicaciones de hoy en día. Muchas de las acciones de nuestro
+										día a día dependen de la seguridad informática a lo largo de toda la ruta que siguen nuestros datos. 
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END OVERVIEW -->
+					<!-- OVERVIEW -->
+					<div id="tem3" class="panel panel-headline" style="">
+						<div class="panel-heading">
+							<h6 class="panel-title text-primary" style="font-size: 24px; color:  #64a19d">Amenazas</h6>
+							<p class="panel-subtitle">Actualizado: Abril 14, 2020</p>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-8">
+									<p class="texto-1">
+									Las amenazas son vulnerabilidades que pueden pasar a ataques, para prevenir que estos problemas de conviertan en ataques debemos analisar nuestros sistemas y llevar un plan de control ante la ocurrrencia de alguno.
+									</p>
+									<p class="texto-1">
+										Las amenazas informáticas para las empresas provienen en gran medida de ataques externos, aunque también existen amenazas internas (como robo de información o uso inadecuado de los sistemas). 												
+									</p>
+									<br>
+									<p class="texto-1">
+										Se estima que, a nivel mundial, los ciberataques suponen un coste que alcanzará los dos billones de dólares en 2019; El director ejecutivo de IBM, Ginni Rometty, cree que se trata del mayor riesgo al que se enfrentan las empresas a nivel mundial . Y todavía, a pesar de las campañas de concienciación internacionales, muchas empresas están un paso por detrás a la hora de entender y responder ante esta creciente amenaza.
+									</p>
+								</div>
+								<div class="col-md-4">
+									<img src="assetsBoard/img/amenazas.jpg" style="width: 100%; border-radius: 25px;
+									background: #e0e0e0;
+									box-shadow:  25px 25px 50px #8b8b8b,
+												-25px -25px 50px #ffffff;" alt="">
+								</div>
+								<br>
+								
+
+							</div>
+						</div>
+					</div>
+					<!-- END OVERVIEW -->
+					<!-- OVERVIEW -->
+					<div id="tem4" class="panel panel-headline">
+						<div class="panel-heading">
+							<h6 class="panel-title text-primary" style="font-size: 24px; color:  #64a19d">Tipos de ataques mas comunes</h6>
+							<p class="panel-subtitle">Actualizado: Abril 14, 2020</p>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div></div>
+								<div class="col-md-12">
+									<h5><label for="" style="font-size: 18px; color:  #64a19d">Suplantación de identidad (phishing)</label></h5>
+									<p class="texto-1">
+										Los ataques de phishing son extremadamente comunes e implican el envío masivo de correos electrónicos fraudulentos a usuarios desprevenidos, disfrazados de proceder de una fuente fiable.
+									
+									<br>
+									Los ataques de phishing también pueden tener lugar a través de redes sociales y otras comunidades en línea, a través de mensajes directos de otros usuarios con una intención oculta. 
+									</p>
+									<hr>
+									<h5><label for="" style="font-size: 18px; color:  #64a19d">Malware</label></h5>
+									<p class="texto-1">
+									El malware utiliza una vulnerabilidad para romper una red cuando un usuario hace clic en un enlace o archivo adjunto de correo electrónico peligroso "plantado", que se utiliza para instalar software malintencionado en el sistema.
+									<br>
+									<ol class="texto-1">
+										<li>Virus: infectan aplicaciones que se adjuntan a la secuencia de inicialización.</li>
+										<li>Troyanos: un programa que se esconde dentro de un programa útil con fines maliciosos</li>
+										<li>Gusanos: a diferencia de los virus, no atacan al host, ya que son programas autónomos que se propagan a través de redes y equipos.</li>
+										<li>Ransomware: un tipo de malware que niega el acceso a los datos de las víctimas, amenazando con publicarlos o eliminarlos a menos que se pague un rescate.</li>
+										<li>Spyware-un tipo de programa instalado para recopilar información sobre los usuarios, sus sistemas o hábitos de navegación, enviando los datos a un usuario remoto. </li>
+									</ol>
+									</p>
+
+									<hr>
+									<h5><label for="" style="font-size: 18px; color:  #64a19d"> Ataque de Denegación de Servicio (DOS)</label></h5>
+									<p class="texto-1">
+										Los ataques DOS funcionan inundando sistemas, servidores y/o redes con tráfico para sobrecargar recursos y ancho de banda. Este resultado hace que el sistema sea incapaz de procesar y satisfacer las solicitudes legítimas. Además de los ataques de denegación de servicio (DoS), también hay ataques de denegación de servicio distribuidos (DDoS).
+
+									</p>
+
+									<hr>
+									<h5><label for="" style="font-size: 18px; color:  #64a19d"> Ataques del Hombre en el Medio (MitM)</label></h5>
+									<p class="texto-1">
+
+										Ocurre cuando un atacante intercepta una transacción entre dos partes, insertándose en el medio. A partir de ahí, los ciberataques pueden robar y manipular datos interrumpiendo el tráfico.
+
+									</p>
+
+									<hr>
+									<h5><label for="" style="font-size: 18px; color:  #64a19d">Inyecciones SQL</label></h5>
+									<p class="texto-1">
+										sto ocurre cuando un atacante inserta código malicioso en un servidor utilizando el lenguaje de consulta del servidor (SQL), forzando al servidor a entregar información protegida. Este tipo de ataque suele consistir en enviar código malicioso a un comentario o cuadro de búsqueda del sitio web no protegido.
+									</p>
+
+									<hr>
+									<h5><label for="" style="font-size: 18px; color:  #64a19d">Explotación de día cero</label></h5>
+									<p class="texto-1">
+										Una vulnerabilidad de día cero se refiere a la explotación de una vulnerabilidad de red cuando es nueva y recientemente anunciada, antes de que un parche sea liberado y/o implementado. Los atacantes de día cero saltan a la vulnerabilidad revelada en la pequeña ventana de tiempo en la que no existe ninguna solución o medida preventiva. 
+									</p>
+
+									<hr>
+									<h5><label for="" style="font-size: 18px; color:  #64a19d">Ataque de contraseña</label></h5>
+									<p class="texto-1">
+										Los atacantes de contraseñas utilizan una miríada de métodos para identificar una contraseña individual, incluyendo el uso de ingeniería social.
+										<br>
+										Otro método común es el ataque con diccionario, cuando el atacante utiliza una lista de contraseñas comunes para intentar acceder al equipo y la red de un usuario.
+									</p>
+
+									<hr>
+									<h5><label for="" style="font-size: 18px; color:  #64a19d">Secuencias de comandos entre sitios</label></h5>
+									<p class="texto-1">
+										Un ataque de secuencias de comandos entre sitios envía secuencias de comandos maliciosas al contenido de sitios web fiables. El código malicioso se une al contenido dinámico que se envía al navegador de la víctima. Normalmente, este código malicioso consiste en código Javascript ejecutado por el navegador de la víctima, pero puede incluir Flash, HTML y XSS.
+									</p>
+
+									<hr>
+									<h5><label for="" style="font-size: 18px; color:  #64a19d">Rootkits</label></h5>
+									<p class="texto-1">
+										Los rootkits se instalan dentro de un software legítimo, donde pueden obtener control remoto y acceso a nivel de administración a través de un sistema. El atacante utiliza el rootkit para robar contraseñas, claves, credenciales y recuperar datos críticos.
+									</p>
+
+									<hr>
+									<h5><label for="" style="font-size: 18px; color:  #64a19d">Internet de los objetos (IO) Ataques</label></h5>
+									<p class="texto-1">
+										Mientras que la conectividad a Internet a través de casi todos los dispositivos imaginables crea comodidad y facilidad para los individuos, también presenta un número creciente -casi ilimitado- de puntos de acceso para que los atacantes los exploten y causen estragos. La interconexión de las cosas hace posible que los atacantes rompan un punto de entrada y lo utilicen como puerta para explotar otros dispositivos de la red.
+									</p>
+
+
+
+								</div>
+								
+				
+							</div>
+						</div>
+					</div>
+					<!-- END OVERVIEW -->
+					<!-- OVERVIEW -->
+					<div  id="tem5" class="panel panel-headline" style="">
+						<div class="panel-heading">
+							<h6 class="panel-title text-primary" style="font-size: 24px; color:  #64a19d">Vulnerabilidades </h6>
+							<p class="panel-subtitle">Actualizado: Abril 14, 2020</p>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12">
+									<p class="texto-1">
+										Una vulnerabilidad es un fallo o debilidad de un sistema de información que pone en riesgo la seguridad de la misma. Se trata de un “agujero” que puede ser producido por un error de configuración, una carencia de procedimientos o un fallo de diseño									
+									<br><br>
+									</p>
+								</div>
+								<div class="col-md-4">
+									<img src="assetsBoard/img/vulnerabilidad.jpg" style="width: 100%; height: 220px; border-radius: 25px;
+									background: #e0e0e0;
+									box-shadow:  25px 25px 50px #8b8b8b,
+									-25px -25px 50px #ffffff;" alt="">
+								</div>
+								<div class="col-md-8">
+									<p >
+									<ul class="texto-1">
+										<li>Vulnerabilidades del sistema:Los sistemas y aplicaciones informáticos siempre tienen algún error en su diseño, estructura o código que genera alguna vulnerabilidad. Por muy pequeño que sea ese error, siempre podrá generar una amenaza sobre los sistemas y la información
+											<ol>
+												<li>Errores de configuración. </li>
+												<li>Errores en la gestión de recursos. </li>
+												<li>Errores en los sistemas de validación. </li>
+												<li>Errores que permiten el acceso a directorios. </li>
+												<li>Errores en la gestión y asignación de permisos. </li>
+											</ol>
+										</li>
+										<br>
+									</ul>
+									</p>
+								</div>
+								
+								<div class="col-md-12">
+									<ul  class="texto-1">
+										<li> Vulnerabilidades producidas por contraseñas: Con el teletrabajo y el cloud computing la gestión de contraseñas se ha convertido en uno de los puntos más importantes en ciberseguridad. Para acceder a las plataformas de trabajo de las empresas es necesario utilizar un usuario y contraseña. Utilizar contraseñas poco seguras genera vulnerabilidades en los sistemas</li>
+											<br>
+											<li>Vulnerabilidades producidas por usuarios: 
+												<br>
+												El error humano es otra causa de riesgos en ciberseguridad. El usuario siempre tiene el riesgo de cometer un error que pueda generar una vulnerabilidad que suponga una amenaza informática humano. 
+												<br>
+												Las malas prácticas o la falta de formación en ciberseguridad también generan vulnerabilidades, como la apertura de ficheros de dudosa procedencia, engaños por publicidad falsa, apertura de correos fraudulentos y similares. 
+										</li>
+									</ul>
+								</div>					
+
+							</div>
+						</div>
+					</div>
+					<!-- END OVERVIEW -->
+					<!-- OVERVIEW -->
+					<div  id="tem6" class="panel panel-headline" style="">
+						<div class="panel-heading">
+							<h6 class="panel-title text-primary" style="font-size: 24px; color:  #64a19d">Dimensiones de la seguridad informática </h6>
+							<p class="panel-subtitle">Actualizado: Abril 14, 2020</p>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+								<p class="texto-1">
+									Las cuatro áreas principales que cubre la seguridad informática
+									<ul>
+										<li>Confidencialidad: Sólo los usuarios autorizados pueden acceder a nuestros recursos, datos e información.
+										</li>
+										<li>
+											Integridad: Sólo los usuarios autorizados deben ser capaces de modificar los datos cuando sea necesario.
+										</li>
+										<li>
+											Disponibilidad: Los datos deben estar disponibles para los usuarios cuando sea necesario.
+										</li>
+										<li>
+											Autenticación: Estás realmente comunicándote con los que piensas que te estás comunicando.
+										</li>
+									</ul>
+								</p><br>
+								
+								<div class="col-md-12 text-center">
+									<div class="col-md-4"></div>
+									<div class="col-md-4 py-1">
+										<div class="card">
+											<div class="card-body">
+												<canvas id="chDonut1"></canvas>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-4"></div>
+								</div>
+								
+								
+													
+
+							</div>
+						</div>
+					</div>
+					<!-- END OVERVIEW -->
+					
+				</div>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+		<!-- END MAIN -->
+		<div class="clearfix"></div>
+		<footer>
+			<div class="container-fluid">
+				<p class="copyright">&copy; 2017 <a href="https://www.themeineed.com" target="_blank">Theme I Need</a>. All Rights Reserved.</p>
+			</div>
+		</footer>
+	</div>
+	<!-- END WRAPPER -->
+
+	<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Ayuda</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			La guía esta hecha con el fin de introducir a una persona al mundo de la ciberseguridad. <br>
+			Para navegar entre los temas toque cualquier sección, se desplegaran los subtemas, cada uno enfocado a un tema en específico. Estos temas son seleccionados cuidadosamente para transmitir la esencia de la seguridad y motivar al aprendizaje.
+			<br><br> Cualquier duda o consulta, pude contactarse por medio del correo: <br><br>
+			<label class="text-primary" for="">team404notfound.one@gmail.com</label>
+			
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+	<!-- Javascript -->
+	<script src="assetsBoard/vendor/jquery/jquery.min.js"></script>
+	<script src="assetsBoard/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assetsBoard/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assetsBoard/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+	<script src="assetsBoard/vendor/chartist/js/chartist.min.js"></script>
+	<script src="assetsBoard/scripts/klorofil-common.js"></script>
+	<script>
+
+		// chart colors
+var colors = ['#007bff','#28a745','#333333','#dc3545','#dc3545','#6c757d'];
+
+/* 3 donut charts */
+var donutOptions = {
+  cutoutPercentage: 85, 
+  legend: {position:'bottom', padding:5, labels: {pointStyle:'circle', usePointStyle:true}}
+};
+
+// donut 1
+var chDonutData1 = {
+    labels: ['Confidencialidad', 'Integridad', 'Disponibilidad','Autenticación'],
+    datasets: [
+      {
+        backgroundColor: colors.slice(0,4),
+        borderWidth: 0,
+        data: [25, 25, 25,25]
+      }
+    ]
+};
+var chDonut1 = document.getElementById("chDonut1");
+if (chDonut1) {
+  new Chart(chDonut1, {
+      type: 'pie',
+      data: chDonutData1,
+      options: donutOptions
+  });
+}
+
+	$(function() {
+		var data, options;
+
+		// headline charts
+		data = {
+			labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+			series: [
+				[23, 29, 24, 40, 25, 24, 35],
+				[14, 25, 18, 34, 29, 38, 44],
+			]
+		};
+
+		options = {
+			height: 300,
+			showArea: true,
+			showLine: false,
+			showPoint: false,
+			fullWidth: true,
+			axisX: {
+				showGrid: false
+			},
+			lineSmooth: false,
+		};
+
+		new Chartist.Line('#headline-chart', data, options);
+
+
+		// visits trend charts
+		data = {
+			labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+			series: [{
+				name: 'series-real',
+				data: [200, 380, 350, 320, 410, 450, 570, 400, 555, 620, 750, 900],
+			}, {
+				name: 'series-projection',
+				data: [240, 350, 360, 380, 400, 450, 480, 523, 555, 600, 700, 800],
+			}]
+		};
+
+		options = {
+			fullWidth: true,
+			lineSmooth: false,
+			height: "270px",
+			low: 0,
+			high: 'auto',
+			series: {
+				'series-projection': {
+					showArea: true,
+					showPoint: false,
+					showLine: false
+				},
+			},
+			axisX: {
+				showGrid: false,
+
+			},
+			axisY: {
+				showGrid: false,
+				onlyInteger: true,
+				offset: 0,
+			},
+			chartPadding: {
+				left: 20,
+				right: 20
+			}
+		};
+
+		new Chartist.Line('#visits-trends-chart', data, options);
+
+
+		// visits chart
+		data = {
+			labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+			series: [
+				[6384, 6342, 5437, 2764, 3958, 5068, 7654]
+			]
+		};
+
+		options = {
+			height: 300,
+			axisX: {
+				showGrid: false
+			},
+		};
+
+		new Chartist.Bar('#visits-chart', data, options);
+
+
+		// real-time pie chart
+		var sysLoad = $('#system-load').easyPieChart({
+			size: 130,
+			barColor: function(percent) {
+				return "rgb(" + Math.round(200 * percent / 100) + ", " + Math.round(200 * (1.1 - percent / 100)) + ", 0)";
+			},
+			trackColor: 'rgba(245, 245, 245, 0.8)',
+			scaleColor: false,
+			lineWidth: 5,
+			lineCap: "square",
+			animate: 800
+		});
+
+		var updateInterval = 3000; // in milliseconds
+
+		setInterval(function() {
+			var randomVal;
+			randomVal = getRandomInt(0, 100);
+
+			sysLoad.data('easyPieChart').update(randomVal);
+			sysLoad.find('.percent').text(randomVal);
+		}, updateInterval);
+
+		function getRandomInt(min, max) {
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+	});
+	</script>
+</body>
+
+</html>
